@@ -64,7 +64,7 @@ function renderSpeciesGrid(species) {
 // Create species card element
 function createSpeciesCard(species) {
   const col = document.createElement('div');
-  col.className = 'col-12 col-lg-6 mb-4';
+  col.className = 'col-12 col-xl-4 mb-4';
 
   // Extract traits if available
   const traits = extractTraits(species);
