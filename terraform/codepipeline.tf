@@ -247,8 +247,8 @@ resource "aws_codepipeline" "app" {
 
       configuration = {
         ConnectionArn    = aws_codestarconnections_connection.github.arn
-        FullRepositoryId = "YOUR_GITHUB_USERNAME/Nameria" # TODO: Update this
-        BranchName       = "main"
+        FullRepositoryId = "lmcnatt/Nameria"
+        BranchName       = "master"
       }
     }
   }
