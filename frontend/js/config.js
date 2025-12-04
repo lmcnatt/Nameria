@@ -7,7 +7,7 @@
 const API_CONFIG = {
   // TODO: Update this after running `terraform apply`
   // Example: 'https://abc123xyz.execute-api.us-east-1.amazonaws.com/dev'
-  baseUrl: 'YOUR_API_GATEWAY_URL_HERE',
+  baseUrl: 'https://a03xn7cqoh.execute-api.us-west-2.amazonaws.com/prod',
   
   endpoints: {
     getSpecies: '/species',
