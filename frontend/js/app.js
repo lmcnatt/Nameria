@@ -50,7 +50,12 @@ function renderSpeciesGrid(species) {
     return;
   }
 
-  species.forEach(item => {
+  // Sort species alphabetically by name
+  const sortedSpecies = [...species].sort((a, b) => 
+    a.name.localeCompare(b.name)
+  );
+
+  sortedSpecies.forEach(item => {
     const card = createSpeciesCard(item);
     speciesGridEl.appendChild(card);
   });
@@ -81,7 +86,7 @@ function createSpeciesCard(species) {
       ${backgroundImage}
       <div class="species-card-content d-flex flex-column h-100">
         <h3 class="h4 fw-bold mb-1">${species.name}</h3>
-        <p class="species-subtitle mb-2">Nameria Campaign Setting</p>
+        <p class="species-subtitle mb-2">${species.source || 'Unknown Source'}</p>
         <div class="species-divider"></div>
         <p class="mb-2">${species.description || 'A legendary species from the realm of Nameria.'}</p>
         ${traitsHtml}
