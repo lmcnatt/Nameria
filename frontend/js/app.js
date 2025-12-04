@@ -77,27 +77,19 @@ function createSpeciesCard(species) {
        </div>`
     : '';
 
-  const imageHtml = species.imagePath 
-    ? `<img src="${species.imagePath}" alt="${species.name}">`
-    : `<div class="d-flex align-items-center justify-content-center h-100" style="font-size: 5rem;">${getSpeciesEmoji(species.name)}</div>`;
+  const backgroundImage = species.imagePath 
+    ? `<img src="${species.imagePath}" alt="${species.name}" class="species-card-bg">`
+    : '';
 
   col.innerHTML = `
     <div class="species-card">
-      <div class="row g-0 h-100">
-        <div class="col-md-6">
-          <div class="species-card-content">
-            <h3 class="h3 fw-bold mb-1">${species.name}</h3>
-            <p class="species-subtitle mb-2">${species.source || 'Unknown Source'}</p>
-            <div class="species-divider"></div>
-            <p class="mb-2">${species.description || 'A legendary species from the realm of Nameria.'}</p>
-            ${traitsHtml}
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="species-card-image">
-            ${imageHtml}
-          </div>
-        </div>
+      ${backgroundImage}
+      <div class="species-card-content">
+        <h3 class="h3 fw-bold mb-1">${species.name}</h3>
+        <p class="species-subtitle mb-2">${species.source || 'Unknown Source'}</p>
+        <div class="species-divider"></div>
+        <p class="mb-2">${species.description || 'A legendary species from the realm of Nameria.'}</p>
+        ${traitsHtml}
       </div>
     </div>
   `;
