@@ -12,6 +12,9 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     
+    <!-- Google Fonts - Cinzel for navbar, Philosopher for headers -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Philosopher:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
         body {
             background-color: #1a1a1a;
@@ -81,6 +84,24 @@
         }
         .navbar-brand img {
             filter: brightness(1.1);
+            max-height: 40px;
+            width: auto;
+        }
+        /* Magical font styling */
+        .navbar-brand span {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        header h1 {
+            font-family: 'Philosopher', serif;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        header p.text-muted {
+            font-family: 'Philosopher', serif;
+            font-weight: 400;
+            letter-spacing: 0.3px;
         }
     </style>
 </head>
@@ -89,7 +110,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="favicon.ico" alt="Nameria Logo" width="32" height="32" class="me-2">
+                <img src="images/Nameria-Logo.png" alt="Nameria Logo" height="40" class="me-2">
                 <span>Nameria Campaign</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -101,13 +122,13 @@
                         <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="species.html">Species</a>
+                        <a class="nav-link" href="#" onclick="alert('Species page coming soon!'); return false;">Species</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="classes.html">Classes</a>
+                        <a class="nav-link" href="#" onclick="alert('Classes page coming soon!'); return false;">Classes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="maps.html">Maps</a>
+                        <a class="nav-link" href="#" onclick="alert('Maps page coming soon!'); return false;">Maps</a>
                     </li>
                 </ul>
             </div>
