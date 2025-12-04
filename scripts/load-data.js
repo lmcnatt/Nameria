@@ -6,7 +6,7 @@ const fs = require("fs");
 const path = require("path");
 
 // Initialize DynamoDB client
-const client = new DynamoDBClient({ region: process.env.AWS_REGION || "us-east-1" });
+const client = new DynamoDBClient({ region: process.env.AWS_REGION || "us-west-2" });
 const docClient = DynamoDBDocumentClient.from(client);
 
 // Get table name from environment or command line

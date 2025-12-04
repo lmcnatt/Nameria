@@ -18,7 +18,7 @@ terraform {
   # backend "s3" {
   #   bucket = "nameria-terraform-state"
   #   key    = "nameria/terraform.tfstate"
-  #   region = "us-east-1"
+  #   region = "us-west-2"
   # }
 }
 

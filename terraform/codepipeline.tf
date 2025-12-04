@@ -149,8 +149,7 @@ resource "aws_iam_role_policy" "codebuild" {
           "lambda:GetFunction"
         ]
         Resource = [
-          aws_lambda_function.get_species.arn,
-          aws_lambda_function.get_species_by_id.arn
+          aws_lambda_function.species_api.arn
         ]
       },
       {
