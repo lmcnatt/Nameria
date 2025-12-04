@@ -13,9 +13,9 @@ variable "project_name" {
 }
 
 variable "environment" {
-  description = "Environment (dev, staging, prod)"
+  description = "Environment"
   type        = string
-  default     = "dev"
+  default     = "prod"
 }
 
 variable "domain_name" {
@@ -29,7 +29,7 @@ variable "tags" {
   type        = map(string)
   default = {
     Project     = "Nameria"
-    Environment = "dev"
+    Environment = "prod"
     ManagedBy   = "Terraform"
     Course      = "IS531"
   }
