@@ -22,10 +22,28 @@
             border-radius: 0.5rem;
             overflow: hidden;
             transition: transform 0.2s;
+            position: relative;
+            min-height: 400px;
         }
         .species-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .species-card-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        .species-card-content {
+            position: relative;
+            z-index: 1;
+            padding: 2rem;
+            background: linear-gradient(to bottom, rgba(29, 29, 29, 0.85), rgba(29, 29, 29, 0.95));
         }
         .species-badge {
             width: 60px;
@@ -43,19 +61,6 @@
             background: linear-gradient(90deg, #ff8c00 0%, #ffa500 50%, #ff8c00 100%);
             margin: 0.75rem 0;
         }
-        .btn-species {
-            background-color: #ff8c00;
-            border: none;
-            color: white;
-            font-weight: 600;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.25rem;
-            transition: background-color 0.2s;
-        }
-        .btn-species:hover {
-            background-color: #ff9f1a;
-            color: white;
-        }
         .species-subtitle {
             color: #999;
             font-size: 0.9rem;
@@ -69,27 +74,46 @@
             border-radius: 0.25rem;
             font-size: 0.85rem;
         }
-        .collapsible-header {
-            cursor: pointer;
-            user-select: none;
+        .navbar-brand img {
+            filter: brightness(1.1);
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="py-4 border-bottom border-secondary">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary">
         <div class="container">
-            <div class="collapsible-header" data-bs-toggle="collapse" data-bs-target="#headerContent">
-                <div class="d-flex align-items-center">
-                    <div class="species-badge me-3">
-                        ⚔️
-                    </div>
-                    <h1 class="h3 mb-0">Nameria Campaign Setting <i class="bi bi-chevron-down ms-2"></i></h1>
-                </div>
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="favicon.ico" alt="Nameria Logo" width="32" height="32" class="me-2">
+                <span>Nameria Campaign</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="species.html">Species</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="classes.html">Classes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="maps.html">Maps</a>
+                    </li>
+                </ul>
             </div>
-            <div id="headerContent" class="collapse show mt-3">
-                <p class="text-muted mb-0">Dungeons & Dragons Species Collection</p>
-            </div>
+        </div>
+    </nav>
+    
+    <!-- Header -->
+    <header class="py-4">
+        <div class="container">
+            <h1 class="h2 mb-2">Dungeons & Dragons Species Collection</h1>
+            <p class="text-muted mb-0">Explore the diverse races of Nameria</p>
         </div>
     </header>
 

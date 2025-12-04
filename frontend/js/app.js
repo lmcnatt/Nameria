@@ -72,34 +72,19 @@ function createSpeciesCard(species) {
        </div>`
     : '';
 
-  const imageHtml = species.imagePath 
-    ? `<img src="${species.imagePath}" alt="${species.name}" class="img-fluid" style="max-height: 350px; width: 100%; object-fit: cover; object-position: center;">`
-    : `<div class="d-flex align-items-center justify-content-center bg-secondary" style="height: 350px; font-size: 5rem;">${getSpeciesEmoji(species.name)}</div>`;
+  const backgroundImage = species.imagePath 
+    ? `<img src="${species.imagePath}" alt="${species.name}" class="species-card-bg">`
+    : '';
 
   col.innerHTML = `
     <div class="species-card h-100">
-      <div class="row g-0 h-100">
-        <div class="col-md-6">
-          <div class="p-4 d-flex flex-column h-100">
-            <div>
-              <h3 class="h4 fw-bold mb-1">${species.name}</h3>
-              <p class="species-subtitle mb-0">Nameria Campaign Setting</p>
-              <div class="species-divider"></div>
-              <p class="mb-2">${species.description || 'A legendary species from the realm of Nameria.'}</p>
-              ${traitsHtml}
-            </div>
-            <div class="mt-auto pt-3">
-              <button class="btn btn-species w-100" onclick="viewSpeciesDetails('${species.name}')">
-                VIEW ${species.name.toUpperCase()} DETAILS
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="h-100">
-            ${imageHtml}
-          </div>
-        </div>
+      ${backgroundImage}
+      <div class="species-card-content d-flex flex-column h-100">
+        <h3 class="h4 fw-bold mb-1">${species.name}</h3>
+        <p class="species-subtitle mb-2">Nameria Campaign Setting</p>
+        <div class="species-divider"></div>
+        <p class="mb-2">${species.description || 'A legendary species from the realm of Nameria.'}</p>
+        ${traitsHtml}
       </div>
     </div>
   `;
@@ -128,12 +113,6 @@ function extractTraits(species) {
   return traits;
 }
 
-// View species details (placeholder function)
-function viewSpeciesDetails(speciesName) {
-  // This could navigate to a detail page or open a modal
-  console.log(`Viewing details for: ${speciesName}`);
-  alert(`Details for ${speciesName} coming soon!`);
-}
 
 
 // Get emoji for species
