@@ -15,19 +15,13 @@ output "namecheap_dns_instructions" {
     
     Add the following DNS records:
     
-    1. CloudFront Distribution (CNAME or ALIAS)
+    1. CloudFront Distribution (CNAME for subdomain)
        Type: CNAME Record
-       Host: @ (or www)
+       Host: nameria
        Value: ${aws_cloudfront_distribution.website.domain_name}
        TTL: Automatic
     
-    2. For www subdomain:
-       Type: CNAME Record
-       Host: www
-       Value: ${aws_cloudfront_distribution.website.domain_name}
-       TTL: Automatic
-    
-    3. ACM Certificate Validation Records:
+    2. ACM Certificate Validation Records:
        You'll need to add the validation records shown below.
        These will be displayed after you run 'terraform apply'.
     
@@ -35,8 +29,8 @@ output "namecheap_dns_instructions" {
     
     After adding these records:
     - Wait 5-10 minutes for DNS propagation
-    - Test with: dig mcnattcloud.com
-    - Access your site at: https://mcnattcloud.com
+    - Test with: dig nameria.mcnattcloud.com
+    - Access your site at: https://nameria.mcnattcloud.com
     
     ==========================================
   EOT

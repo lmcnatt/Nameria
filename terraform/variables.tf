@@ -21,7 +21,7 @@ variable "environment" {
 variable "domain_name" {
   description = "Custom domain name"
   type        = string
-  default     = "mcnattcloud.com"
+  default     = "nameria.mcnattcloud.com"
 }
 
 variable "tags" {

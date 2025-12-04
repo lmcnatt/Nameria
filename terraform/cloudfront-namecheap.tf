@@ -18,7 +18,7 @@ resource "aws_cloudfront_distribution" "website" {
   price_class         = "PriceClass_100" # Use only North America and Europe
 
   # Aliases (custom domain) - You'll configure this in Namecheap
-  aliases = [var.domain_name, "www.${var.domain_name}"]
+  aliases = [var.domain_name]
 
   # Origin - S3 bucket
   origin {
@@ -86,10 +86,6 @@ resource "aws_acm_certificate" "website" {
   provider          = aws.us_east_1
   domain_name       = var.domain_name
   validation_method = "DNS"
-
-  subject_alternative_names = [
-    "www.${var.domain_name}"
-  ]
 
   lifecycle {
     create_before_destroy = true
