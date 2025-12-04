@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,22 +11,90 @@
     
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #1a1a1a;
+        }
+        .species-card {
+            background-color: #2d2d2d;
+            border: 1px solid #404040;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .species-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .species-badge {
+            width: 60px;
+            height: 60px;
+            background-color: #3d3d3d;
+            border: 2px solid #505050;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .species-divider {
+            height: 3px;
+            background: linear-gradient(90deg, #ff8c00 0%, #ffa500 50%, #ff8c00 100%);
+            margin: 0.75rem 0;
+        }
+        .btn-species {
+            background-color: #ff8c00;
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.25rem;
+            transition: background-color 0.2s;
+        }
+        .btn-species:hover {
+            background-color: #ff9f1a;
+            color: white;
+        }
+        .species-subtitle {
+            color: #999;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        .trait-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            margin: 0.25rem;
+            background-color: #3d3d3d;
+            border-radius: 0.25rem;
+            font-size: 0.85rem;
+        }
+        .collapsible-header {
+            cursor: pointer;
+            user-select: none;
+        }
+    </style>
 </head>
-<body class="bg-dark text-light">
+<body>
     <!-- Header -->
-    <header class="bg-primary text-white py-5 text-center border-bottom border-3 border-warning">
+    <header class="py-4 border-bottom border-secondary">
         <div class="container">
-            <h1 class="display-3 mb-2">
-                ⚔️ Nameria Campaign
-            </h1>
-            <p class="lead text-white-50">
-                Dungeons & Dragons Species Collection
-            </p>
+            <div class="collapsible-header" data-bs-toggle="collapse" data-bs-target="#headerContent">
+                <div class="d-flex align-items-center">
+                    <div class="species-badge me-3">
+                        ⚔️
+                    </div>
+                    <h1 class="h3 mb-0">Nameria Campaign Setting <i class="bi bi-chevron-down ms-2"></i></h1>
+                </div>
+            </div>
+            <div id="headerContent" class="collapse show mt-3">
+                <p class="text-muted mb-0">Dungeons & Dragons Species Collection</p>
+            </div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="py-5">
+    <main class="py-4">
         <div class="container">
             <!-- Loading State -->
             <div id="loading" class="text-center py-5">
@@ -43,14 +111,14 @@
             </div>
 
             <!-- Species Grid -->
-            <div id="species-grid" class="row g-4">
+            <div id="species-grid" class="row g-3">
                 <!-- Species cards will be dynamically inserted here -->
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-dark border-top border-3 border-warning py-4 text-center mt-5">
+    <footer class="border-top border-secondary py-4 text-center mt-5">
         <div class="container">
             <p class="text-muted mb-2">
                 &copy; 2025 Nameria Campaign | Built with AWS Serverless

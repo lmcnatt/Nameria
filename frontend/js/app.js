@@ -59,24 +59,80 @@ function renderSpeciesGrid(species) {
 // Create species card element
 function createSpeciesCard(species) {
   const col = document.createElement('div');
-  col.className = 'col-12 col-md-6 col-lg-4 mb-4';
+  col.className = 'col-12 col-md-6 col-xl-4 mb-3';
+
+  // Extract traits if available
+  const traits = extractTraits(species);
+  const traitsHtml = traits.length > 0 
+    ? `<div class="mt-3 mb-3">
+         <h6 class="fw-bold mb-2">Racial Traits</h6>
+         <div class="text-muted small">
+           ${traits.map(trait => `<span class="trait-badge">${trait}</span>`).join('')}
+         </div>
+       </div>`
+    : '';
 
   const imageHtml = species.imagePath 
-    ? `<img src="${species.imagePath}" alt="${species.name}" class="card-img-top" style="height: 250px; object-fit: cover;">`
-    : `<div class="d-flex align-items-center justify-content-center bg-secondary" style="height: 250px; font-size: 4rem;">${getSpeciesEmoji(species.name)}</div>`;
+    ? `<img src="${species.imagePath}" alt="${species.name}" class="img-fluid" style="max-height: 350px; width: 100%; object-fit: cover; object-position: center;">`
+    : `<div class="d-flex align-items-center justify-content-center bg-secondary" style="height: 350px; font-size: 5rem;">${getSpeciesEmoji(species.name)}</div>`;
 
   col.innerHTML = `
-    <div class="card bg-dark text-light border-secondary h-100">
-      ${imageHtml}
-      <div class="card-body">
-        <h3 class="card-title text-warning h4 mb-3">${species.name}</h3>
-        <p class="card-text text-muted small mb-2"><strong>Source:</strong> ${species.source || 'Unknown'}</p>
-        <p class="card-text">${species.description || 'A legendary species from the realm of Nameria.'}</p>
+    <div class="species-card h-100">
+      <div class="row g-0 h-100">
+        <div class="col-md-6">
+          <div class="p-4 d-flex flex-column h-100">
+            <div>
+              <h3 class="h4 fw-bold mb-1">${species.name}</h3>
+              <p class="species-subtitle mb-0">Nameria Campaign Setting</p>
+              <div class="species-divider"></div>
+              <p class="mb-2">${species.description || 'A legendary species from the realm of Nameria.'}</p>
+              ${traitsHtml}
+            </div>
+            <div class="mt-auto pt-3">
+              <button class="btn btn-species w-100" onclick="viewSpeciesDetails('${species.name}')">
+                VIEW ${species.name.toUpperCase()} DETAILS
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="h-100">
+            ${imageHtml}
+          </div>
+        </div>
       </div>
     </div>
   `;
 
   return col;
+}
+
+// Extract racial traits from species data
+function extractTraits(species) {
+  const traits = [];
+  
+  // Check common trait fields
+  if (species.traits) {
+    if (Array.isArray(species.traits)) {
+      return species.traits;
+    } else if (typeof species.traits === 'string') {
+      return species.traits.split(',').map(t => t.trim());
+    }
+  }
+  
+  // Check for common D&D traits in the data
+  if (species.abilityScoreIncrease) traits.push(species.abilityScoreIncrease);
+  if (species.speed) traits.push(`Speed ${species.speed}`);
+  if (species.size) traits.push(species.size);
+  
+  return traits;
+}
+
+// View species details (placeholder function)
+function viewSpeciesDetails(speciesName) {
+  // This could navigate to a detail page or open a modal
+  console.log(`Viewing details for: ${speciesName}`);
+  alert(`Details for ${speciesName} coming soon!`);
 }
 
 
