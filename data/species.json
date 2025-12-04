@@ -159,5 +159,19 @@
     "source": "Humblewood Campaign Setting",
     "description": "One of the least understood and most often vilified humblefolk in the Wood, vulpins have earned a bad reputation that isn’t entirely deserved.",
     "imagePath": "/images/species/vulpin.png"
+  },
+  {
+    "id": "s#24",
+  "name": "Lizardfolk",
+  "source": "Mordenkainen Presents: Monsters of the Multiverse",
+  "description": "Gifted by the gods with remarkable physical defenses and a mystical connection to the natural world, lizardfolk can survive with just their wits in situations that would be deadly for other folk.",
+  "imagePath": "/images/species/lizardfolk.png"
+  },
+  {
+    "id": "s#25",
+    "name": "Grung",
+    "source": "One Grung Above",
+    "description": "Your grung character has an assortment of inborn abilities, part and parcel of grung nature.",
+    "imagePath": "/images/species/grung.png"
   }
 ]
