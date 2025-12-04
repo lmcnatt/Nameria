@@ -64,32 +64,40 @@ function renderSpeciesGrid(species) {
 // Create species card element
 function createSpeciesCard(species) {
   const col = document.createElement('div');
-  col.className = 'col-12 col-md-6 col-xl-4 mb-3';
+  col.className = 'col-12 col-lg-6 mb-4';
 
   // Extract traits if available
   const traits = extractTraits(species);
   const traitsHtml = traits.length > 0 
-    ? `<div class="mt-3 mb-3">
+    ? `<div class="mt-auto pt-3">
          <h6 class="fw-bold mb-2">Racial Traits</h6>
-         <div class="text-muted small">
-           ${traits.map(trait => `<span class="trait-badge">${trait}</span>`).join('')}
+         <div class="text-light small">
+           ${traits.join(', ')}
          </div>
        </div>`
     : '';
 
-  const backgroundImage = species.imagePath 
-    ? `<img src="${species.imagePath}" alt="${species.name}" class="species-card-bg">`
-    : '';
+  const imageHtml = species.imagePath 
+    ? `<img src="${species.imagePath}" alt="${species.name}">`
+    : `<div class="d-flex align-items-center justify-content-center h-100" style="font-size: 5rem;">${getSpeciesEmoji(species.name)}</div>`;
 
   col.innerHTML = `
-    <div class="species-card h-100">
-      ${backgroundImage}
-      <div class="species-card-content d-flex flex-column h-100">
-        <h3 class="h4 fw-bold mb-1">${species.name}</h3>
-        <p class="species-subtitle mb-2">${species.source || 'Unknown Source'}</p>
-        <div class="species-divider"></div>
-        <p class="mb-2">${species.description || 'A legendary species from the realm of Nameria.'}</p>
-        ${traitsHtml}
+    <div class="species-card">
+      <div class="row g-0 h-100">
+        <div class="col-md-6">
+          <div class="species-card-content">
+            <h3 class="h3 fw-bold mb-1">${species.name}</h3>
+            <p class="species-subtitle mb-2">${species.source || 'Unknown Source'}</p>
+            <div class="species-divider"></div>
+            <p class="mb-2">${species.description || 'A legendary species from the realm of Nameria.'}</p>
+            ${traitsHtml}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="species-card-image">
+            ${imageHtml}
+          </div>
+        </div>
       </div>
     </div>
   `;
