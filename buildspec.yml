@@ -12,12 +12,16 @@ phases:
       - pnpm --version
       
       - echo "Installing Lambda dependencies..."
-      - cd lambda && pnpm install && cd ..
+      - cd lambda && pnpm install --prod --shamefully-hoist && cd ..
 
   build:
     commands:
       - echo "Build phase started on $(date)"
       - echo "Packaging Lambda function..."
+      
+      # Verify node_modules exist
+      - echo "Checking Lambda dependencies..."
+      - ls -la lambda/node_modules/@aws-sdk/ || echo "AWS SDK not found!"
       
       # Package Lambda function
       - cd lambda && zip -r species-api.zip . && cd ..
