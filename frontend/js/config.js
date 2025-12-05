@@ -1,5 +1,5 @@
 const API_CONFIG = {
-  baseUrl: 'https://a03xn7cqoh.execute-api.us-west-2.amazonaws.com/prod',
+  baseUrl: 'https://m0nobvlrmh.execute-api.us-west-2.amazonaws.com/prod',
   
   endpoints: {
     getSpecies: '/species',
