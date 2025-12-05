@@ -58,4 +58,3 @@ resource "aws_dynamodb_table" "dnd" {
 #     Name = "${var.project_name}-table-prod"
 #   }
 # }
-
