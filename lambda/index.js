@@ -1,4 +1,4 @@
-// species-api Lambda function - Handles all D&D species API requests
+// species-api Lambda function - Handles all D&D species and class API requests
 
 const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
 const { DynamoDBDocumentClient, ScanCommand, GetCommand } = require("@aws-sdk/lib-dynamodb");

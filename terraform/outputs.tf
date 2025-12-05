@@ -27,7 +27,7 @@ output "api_gateway_url" {
 
 output "dynamodb_table_name" {
   description = "DynamoDB table name"
-  value       = aws_dynamodb_table.species.name
+  value       = aws_dynamodb_table.dnd.name
 }
 
 output "website_url" {

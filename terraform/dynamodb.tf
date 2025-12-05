@@ -1,21 +1,23 @@
 # dynamodb.tf - DynamoDB table configuration
 
-resource "aws_dynamodb_table" "species" {
-  name           = "${var.project_name}-species"
+resource "aws_dynamodb_table" "dnd" {
+  name           = "${var.project_name}-dnd"
   billing_mode   = "PAY_PER_REQUEST" # On-demand pricing
   hash_key       = "id"
 
+  # Primary key attribute (String type)
   attribute {
     name = "id"
     type = "S"
   }
 
-  # Global Secondary Index for querying by name (optional)
+  # Global Secondary Index attribute (String type)
   attribute {
     name = "name"
     type = "S"
   }
 
+  # Global Secondary Index for querying by name
   global_secondary_index {
     name            = "NameIndex"
     hash_key        = "name"
@@ -33,14 +35,14 @@ resource "aws_dynamodb_table" "species" {
   }
 
   tags = {
-    Name = "${var.project_name}-species-table"
+    Name = "${var.project_name}-dnd-table"
   }
 }
 
 # DynamoDB table for production (example with provisioned capacity)
 # Uncomment for production deployment with predictable traffic
-# resource "aws_dynamodb_table" "species_prod" {
-#   name           = "${var.project_name}-species-prod"
+# resource "aws_dynamodb_table" "dnd_prod" {
+#   name           = "${var.project_name}-dnd-prod"
 #   billing_mode   = "PROVISIONED"
 #   read_capacity  = 5
 #   write_capacity = 5
@@ -53,7 +55,7 @@ resource "aws_dynamodb_table" "species" {
 #
 #   # Enable autoscaling for production
 #   tags = {
-#     Name = "${var.project_name}-species-table-prod"
+#     Name = "${var.project_name}-dnd-table-prod"
 #   }
 # }
 

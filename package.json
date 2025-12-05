@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "load-data": "AWS_PROFILE=personal AWS_REGION=us-west-2 node scripts/load-data.js nameria-dnd-species",
+    "load-data": "AWS_PROFILE=personal AWS_REGION=us-west-2 node scripts/load-data.js nameria-dnd",
     "sync-images": "AWS_PROFILE=personal aws s3 sync frontend/images/ s3://nameria-dnd-website-825551243283/images/ --region us-west-2",
     "sync-frontend": "AWS_PROFILE=personal aws s3 sync frontend/ s3://nameria-dnd-website-825551243283/ --region us-west-2",
     "invalidate-cache": "AWS_PROFILE=personal aws cloudfront create-invalidation --distribution-id E154XQH7TOLHN2 --paths '/*' --region us-west-2",

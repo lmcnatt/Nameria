@@ -47,8 +47,8 @@ resource "aws_iam_role_policy" "lambda_dynamodb" {
           "dynamodb:DeleteItem"
         ]
         Resource = [
-          aws_dynamodb_table.species.arn,
-          "${aws_dynamodb_table.species.arn}/index/*"
+          aws_dynamodb_table.dnd.arn,
+          "${aws_dynamodb_table.dnd.arn}/index/*"
         ]
       }
     ]
@@ -81,7 +81,7 @@ resource "aws_lambda_function" "species_api" {
 
   environment {
     variables = {
-      DYNAMODB_TABLE = aws_dynamodb_table.species.name
+      DYNAMODB_TABLE = aws_dynamodb_table.dnd.name
       REGION         = var.aws_region
     }
   }

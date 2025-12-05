@@ -1,4 +1,4 @@
-// load-data.js - Script to load sample D&D species data into DynamoDB
+// load-data.js - Script to load D&D species and class data into DynamoDB
 
 const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
 const { DynamoDBDocumentClient, PutCommand } = require("@aws-sdk/lib-dynamodb");
@@ -21,24 +21,25 @@ if (!tableName) {
 
 async function loadData() {
   try {
-    // Read species data from JSON file
-    const dataPath = path.join(__dirname, "../data/species.json");
-    const speciesData = JSON.parse(fs.readFileSync(dataPath, "utf8"));
+    // Read D&D data (species and classes) from JSON file
+    const dataPath = path.join(__dirname, "../data/data.json");
+    const dndData = JSON.parse(fs.readFileSync(dataPath, "utf8"));
 
-    console.log(`Loading ${speciesData.length} species into DynamoDB table: ${tableName}`);
+    console.log(`Loading ${dndData.length} items (species and classes) into DynamoDB table: ${tableName}`);
 
-    // Insert each species into DynamoDB
-    for (const species of speciesData) {
+    // Insert each item into DynamoDB
+    for (const item of dndData) {
       const command = new PutCommand({
         TableName: tableName,
-        Item: species,
+        Item: item,
       });
 
       await docClient.send(command);
-      console.log(`✓ Loaded: ${species.name}`);
+      const itemType = item.id.startsWith('s#') ? 'Species' : 'Class';
+      console.log(`✓ Loaded ${itemType}: ${item.name}`);
     }
 
-    console.log("\n✅ All species data loaded successfully!");
+    console.log("\n✅ All D&D data loaded successfully!");
   } catch (error) {
     console.error("❌ Error loading data:", error);
     process.exit(1);

@@ -1,0 +1,261 @@
+[
+  {
+    "id": "s#1",
+    "name": "Aarakocra",
+    "source": "Mordenkainen Presents: Monsters of the Multiverse",
+    "description": "A winged people who originated on the Elemental Plane of Air, aarakocra soar through the sky wherever they wander.",
+    "imagePath": "/images/species/aarakocra.png"
+  },
+  {
+    "id": "s#2",
+    "name": "Centaur",
+    "source": "Mordenkainen Presents: Monsters of the Multiverse",
+    "description": "Centaurs gallop throughout the multiverse and trace their origins to many different realms.",
+    "imagePath": "/images/species/centaur.png"
+  },
+  {
+    "id": "s#3",
+    "name": "Fairy",
+    "source": "Mordenkainen Presents: Monsters of the Multiverse",
+    "description": "Infused with the magic of the Feywild, most fairies look like Small elves with insectile wings, but each fairy has a special physical characteristic that sets the fairy apart.",
+    "imagePath": "/images/species/fairy.png"
+  },
+  {
+    "id": "s#4",
+    "name": "Harengon",
+    "source": "Mordenkainen Presents: Monsters of the Multiverse",
+    "description": "Harengons are blessed with a little fey luck, and they often find themselves a few fortunate feet away from dangers during adventures.",
+    "imagePath": "/images/species/harengon.png"
+  },
+  {
+    "id": "s#5",
+    "name": "Minotaur",
+    "source": "Mordenkainen Presents: Monsters of the Multiverse",
+    "description": "Minotaurs are barrel-chested humanoids with heads resembling those of bulls. Blessed with a supernaturally strong sense of direction, minotaurs make great navigators.",
+    "imagePath": "/images/species/minotaur.png"
+  },
+  {
+    "id": "s#6",
+    "name": "Satyr",
+    "source": "Mordenkainen Presents: Monsters of the Multiverse",
+    "description": "Originating in the Feywild—a realm of pure emotion— satyrs thrive on the energy of merriment.",
+    "imagePath": "/images/species/satyr.png"
+  },
+  {
+    "id": "s#7",
+    "name": "Tabaxi",
+    "source": "Mordenkainen Presents: Monsters of the Multiverse",
+    "description": "Created by the Cat Lord—a divine being of the Upper Planes—to blend the qualities of humanoids and cats, tabaxi are a varied people in both attitude and appearance.",
+    "imagePath": "/images/species/tabaxi.png"
+  },
+  {
+    "id": "s#8",
+    "name": "Tortle",
+    "source": "Mordenkainen Presents: Monsters of the Multiverse",
+    "description": "Carrying their shelter on their backs gives tortles a special feeling of security wherever they go, for even if they visit a far, unknown country, they have a place to lay their heads.",
+    "imagePath": "/images/species/tortle.png"
+  },
+  {
+    "id": "s#9",
+    "name": "Leonin",
+    "source": "Mythic Odysseys of Theros",
+    "description": "Nomadic, lion-like humanoids who rarely interact with other peoples, having all they need in their shimmering homeland.",
+    "imagePath": "/images/species/leonin.png"
+  },
+  {
+    "id": "s#10",
+    "name": "Loxodon",
+    "source": "Guildmasters' Guide to Ravnica",
+    "description": "Humanoid elephants, loxodons are strong, calm, and wise.",
+    "imagePath": "/images/species/loxodon.png"
+  },
+  {
+    "id": "s#11",
+    "name": "Locathah",
+    "source": "Locathah Rising",
+    "description": "These resilient and proud fish-folk have endured war, slavery, and mistreatment at the hands of other aquatic creatures.",
+    "imagePath": "/images/species/locathah.png"
+  },
+  {
+    "id": "s#12",
+    "name": "Bearfolk",
+    "source": "Book of Ebon Tides",
+    "description": "All bearfolk share an inherent iron resolve. Only by banding together in tight-knit communities dedicated to fulfilling their noble purpose have the bearfolk miraculously continued to thrive.",
+    "imagePath": "/images/species/bearfolk.png"
+  },
+  {
+    "id": "s#13",
+    "name": "Ratatosk",
+    "source": "Book of Ebon Tides",
+    "description": "In recent decades, the squirrel-like beings called ratatosk have grown bored with simply safeguarding the World Tree and have decided to more actively battle corruption in the Shadow Realm.",
+    "imagePath": "/images/species/ratatosk.png"
+  },
+  {
+    "id": "s#14",
+    "name": "Cervan",
+    "source": "Humblewood Campaign Setting",
+    "description": "Cervans are a versatile deer-like folk who make their homes in small, intimate villages throughout Humblewood.",
+    "imagePath": "/images/species/cervan.png"
+  },
+  {
+    "id": "s#15",
+    "name": "Corvum",
+    "source": "Humblewood Campaign Setting",
+    "description": "Corvums are a crow-like race with dark feathers and sharp minds. Corvums are crafty and they tend to get what they want, one way or another.",
+    "imagePath": "/images/species/corvum.png"
+  },
+  {
+    "id": "s#16",
+    "name": "Gallus",
+    "source": "Humblewood Campaign Setting",
+    "description": "Gallus have a deep respect for nature and a love of gardening unmatched by other birdfolk. They value their social bonds above all else, and are always ready to help their neighbors.",
+    "imagePath": "/images/species/gallus.png"
+  },
+  {
+    "id": "s#17",
+    "name": "Hedge",
+    "source": "Humblewood Campaign Setting",
+    "description": "The most diplomatic and good natured of all the humblefolk, hedges like to live quiet lives in villages throughout the Wood, or within the safety of birdfolk perches.",
+    "imagePath": "/images/species/hedge.png"
+  },
+  {
+    "id": "s#18",
+    "name": "Jerbeen",
+    "source": "Humblewood Campaign Setting",
+    "description": "Jerbeens are small mouse-like folk with long, furred tails that help them balance.",
+    "imagePath": "/images/species/jerbeen.png"
+  },
+  {
+    "id": "s#19",
+    "name": "Luma",
+    "source": "Humblewood Campaign Setting",
+    "description": "Lumas are smaller than most birdfolk, and resemble either doves or pigeons. They are as often shunned for their eccentricities as they are celebrated for them.",
+    "imagePath": "/images/species/luma.png"
+  },
+  {
+    "id": "s#20",
+    "name": "Mapach",
+    "source": "Humblewood Campaign Setting",
+    "description": "Naturally curious, mapachs are a medium-sized racoon-like race.",
+    "imagePath": "/images/species/mapach.png"
+  },
+  {
+    "id": "s#21",
+    "name": "Raptor",
+    "source": "Humblewood Campaign Setting",
+    "description": "Resembling small hawks, eagles, and other birds of prey, they have sharp talons and agile builds that help them effortlessly glide through the canopy.",
+    "imagePath": "/images/species/raptor.png"
+  },
+  {
+    "id": "s#22",
+    "name": "Strig",
+    "source": "Humblewood Campaign Setting",
+    "description": "Resembling owls, their thick feathers, solid bodies, and broad wings have earned them a reputation as the most powerful of the birdfolk races.",
+    "imagePath": "/images/species/strig.png"
+  },
+  {
+    "id": "s#23",
+    "name": "Vulpin",
+    "source": "Humblewood Campaign Setting",
+    "description": "One of the least understood and most often vilified humblefolk in the Wood, vulpins have earned a bad reputation that isn’t entirely deserved.",
+    "imagePath": "/images/species/vulpin.png"
+  },
+  {
+    "id": "s#24",
+  "name": "Lizardfolk",
+  "source": "Mordenkainen Presents: Monsters of the Multiverse",
+  "description": "Gifted by the gods with remarkable physical defenses and a mystical connection to the natural world, lizardfolk can survive with just their wits in situations that would be deadly for other folk.",
+  "imagePath": "/images/species/lizardfolk.png"
+  },
+  {
+    "id": "s#25",
+    "name": "Grung",
+    "source": "One Grung Above",
+    "description": "Your grung character has an assortment of inborn abilities, part and parcel of grung nature.",
+    "imagePath": "/images/species/grung.png"
+  },
+  {
+    "id": "c#1",
+    "name": "Barbarian",
+    "subtitle": "A Fierce Warrior of Primal Rage",
+    "description": "Barbarians are mighty warriors who are powered by primal forces of the multiverse that manifest as a Rage.",
+    "imagePath": "/images/classes/barbarian.png"
+  },
+  {
+    "id": "c#2",
+    "name": "Bard",
+    "subtitle": "An Inspiring Performer of Music, Dance, and Magic",
+    "description": "Bards are expert at inspiring others, soothing hurts, disheartening foes, and creating illusions.",
+    "imagePath": "/images/classes/bard.png"
+  },
+  {
+    "id": "c#3",
+    "name": "Cleric",
+    "subtitle": "A Miraculous Priest of Divine Power",
+    "description": "Clerics can reach out to the divine magic of the Outer Planes and channel it to bolster people and battle foes.",
+    "imagePath": "/images/classes/cleric.png"
+  },
+  {
+    "id": "c#4",
+    "name": "Druid",
+    "subtitle": "A Nature Priest of Primal Power",
+    "description": "Druids call on the forces of nature, harnessing magic to heal, transform into animals, and wield elemental destruction.",
+    "imagePath": "/images/classes/druid.png"
+  },
+  {
+    "id": "c#5",
+    "name": "Fighter",
+    "subtitle": "A Master of All Arms and Armor",
+    "description": "Fighters all share an unparalleled prowess with weapons and armor, and are well acquainted with death, both meting it out and defying it.",
+    "imagePath": "/images/classes/fighter.png"
+  },
+  {
+    "id": "c#6",
+    "name": "Monk",
+    "subtitle": "A Martial Artist of Supernatural Focus",
+    "description": "Monks focus their internal reservoirs of power to create extraordinary, even supernatural, effects.",
+    "imagePath": "/images/classes/monk.png"
+  },
+  {
+    "id": "c#7",
+    "name": "Paladin",
+    "subtitle": "A Devout Warrior of Sacred Oaths",
+    "description": "Paladins live on the front lines of the cosmic struggle, united by their oaths against the forces of annihilation.",
+    "imagePath": "/images/classes/paladin.png"
+  },
+  {
+    "id": "c#8",
+    "name": "Ranger",
+    "subtitle": "A Wandering Warrior Imbued with Primal Magic",
+    "description": "Rangers are honed with deadly focus and harness primal powers to protect the world from the ravages of monsters and tyrants.",
+    "imagePath": "/images/classes/ranger.png"
+  },
+  {
+    "id": "c#9",
+    "name": "Rogue",
+    "subtitle": "A Dexterous Expert in Stealth and Subterfuge",
+    "description": "Rogues have a knack for finding the solution to just about any problem, prioritizing subtle strikes over brute strength.",
+    "imagePath": "/images/classes/rouge.png"
+  },
+  {
+    "id": "c#10",
+    "name": "Sorcerer",
+    "subtitle": "A Dazzling Mage Filled with Innate Magic",
+    "description": "Sorcerers harness and channel the raw, roiling power of innate magic that is stamped into their very being.",
+    "imagePath": "/images/classes/sorcerer.png"
+  },
+  {
+    "id": "c#11",
+    "name": "Warlock",
+    "subtitle": "An Occultist Empowered by Otherworldly Pacts",
+    "description": "Warlocks quest for knowledge that lies hidden in the fabric of the multiverse, piecing together arcane secrets to bolster their own power.",
+    "imagePath": "/images/classes/warlock.png"
+  },
+  {
+    "id": "c#12",
+    "name": "Wizard",
+    "subtitle": "A Scholarly Magic-User of Arcane Power",
+    "description": "Wizards cast spells of explosive fire, arcing lightning, subtle deception, and spectacular transformations.",
+    "imagePath": "/images/classes/wizard.png"
+  }
+]
