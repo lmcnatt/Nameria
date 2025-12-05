@@ -28,7 +28,8 @@ async function loadSpecies() {
     const data = await response.json();
     
     if (data.success && data.data) {
-      speciesData = data.data;
+      // Filter for species only (IDs starting with 's#')
+      speciesData = data.data.filter(item => item.id.startsWith('s#'));
       renderSpeciesGrid(speciesData);
       hideLoading();
     } else {
