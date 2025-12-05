@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maps of the Nameria Campaign World">
+    <title>Nameria - Campaign Maps</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Google Fonts - Cinzel for navbar, Philosopher for headers -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Philosopher:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1f1f 50%, #1a1a1a 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 50%, rgba(255, 140, 0, 0.08) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 80%, rgba(255, 165, 0, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        main, header, nav, footer {
+            position: relative;
+            z-index: 1;
+        }
+        .map-container {
+            background-color: #2d2d2d;
+            border: 2px solid #404040;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .map-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 30px rgba(255, 140, 0, 0.3), 0 4px 15px rgba(0,0,0,0.7);
+            border-color: #ff8c00;
+        }
+        .map-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+        }
+        .map-header {
+            background-color: #1a1a1a;
+            padding: 1.5rem;
+            border-bottom: 2px solid #ff8c00;
+        }
+        .map-title {
+            font-family: 'Philosopher', serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: #ffa500;
+            margin-bottom: 0.5rem;
+        }
+        .map-description {
+            color: #d0d0d0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .navbar-brand img {
+            filter: brightness(1.1);
+            max-height: 70px;
+            width: auto;
+        }
+        /* Magical font styling */
+        .navbar-brand span {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-size: 1.5rem;
+        }
+        header h1 {
+            font-family: 'Philosopher', serif;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        header p.text-muted {
+            font-family: 'Philosopher', serif;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            color: #ffa500 !important;
+            font-style: italic;
+        }
+        header {
+            background: linear-gradient(180deg, rgba(45, 31, 31, 0.5) 0%, transparent 100%);
+            border-bottom: 1px solid rgba(255, 140, 0, 0.2);
+        }
+        /* Modal for fullscreen map */
+        .modal-fullscreen-custom .modal-dialog {
+            width: 95vw;
+            max-width: 95vw;
+            height: 95vh;
+            margin: 2.5vh auto;
+        }
+        .modal-fullscreen-custom .modal-content {
+            height: 100%;
+            background-color: #1a1a1a;
+            border: 2px solid #ff8c00;
+        }
+        .modal-fullscreen-custom .modal-body {
+            padding: 0;
+            overflow: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-fullscreen-custom .modal-body img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .zoom-hint {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: rgba(255, 140, 0, 0.2);
+            border: 1px solid #ff8c00;
+            border-radius: 0.25rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #ffa500;
+        }
+        .zoom-hint i {
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/Nameria-Logo.png" alt="Nameria Logo" height="70" class="me-2">
+                <span>Nameria Campaign</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="species.html">Species</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="classes.html">Classes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="maps.html">Maps</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Header -->
+    <header class="py-4">
+        <div class="container">
+            <h1 class="h2 mb-2">Maps of Nameria</h1>
+            <p class="text-muted mb-0">Explore the lands of the animal kingdom</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-4">
+        <div class="container">
+            <!-- World Map -->
+            <div class="map-container mb-5">
+                <div class="map-header">
+                    <h2 class="map-title">
+                        <i class="bi bi-globe-americas me-2"></i>
+                        World Map of Nameria
+                    </h2>
+                    <p class="map-description mb-0">
+                        The magical realm where all creatures are either intelligent animals or animal-folk. 
+                        A land inspired by Narnia and Humblewood, where civilization and nature exist in harmony.
+                    </p>
+                </div>
+                <img src="images/Nameria-Map.png" 
+                     alt="Nameria World Map" 
+                     class="map-image"
+                     data-bs-toggle="modal" 
+                     data-bs-target="#mapModal"
+                     title="Click to view fullscreen">
+            </div>
+
+            <!-- Zoom Hint -->
+            <div class="text-center">
+                <div class="zoom-hint">
+                    <i class="bi bi-zoom-in"></i>
+                    Click on any map to view it in fullscreen
+                </div>
+            </div>
+
+            <!-- Coming Soon Section -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="text-center p-5" style="background-color: #2d2d2d; border: 1px solid #404040; border-radius: 0.5rem;">
+                        <i class="bi bi-map" style="font-size: 3rem; color: #ffa500;"></i>
+                        <h3 class="mt-3" style="font-family: 'Philosopher', serif; color: #ffa500;">More Maps Coming Soon</h3>
+                        <p class="text-muted mt-2">Regional maps, city layouts, and dungeon plans will be added as the campaign unfolds.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-top border-secondary py-4 text-center mt-5">
+        <div class="container">
+            <p class="text-muted mb-2">
+                &copy; 2025 Nameria Campaign | Built with AWS Serverless
+            </p>
+            <p class="small text-muted">
+                <span class="text-warning fw-bold">S3</span> • 
+                <span class="text-warning fw-bold">Lambda</span> • 
+                <span class="text-warning fw-bold">API Gateway</span> • 
+                <span class="text-warning fw-bold">DynamoDB</span> • 
+                <span class="text-warning fw-bold">CloudFront</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Fullscreen Modal -->
+    <div class="modal fade" id="mapModal" tabindex="-1" aria-labelledby="mapModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen-custom">
+            <div class="modal-content">
+                <div class="modal-header border-bottom border-warning">
+                    <h5 class="modal-title" id="mapModalLabel" style="font-family: 'Philosopher', serif; color: #ffa500;">
+                        <i class="bi bi-map me-2"></i>Nameria World Map
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/Nameria-Map.png" alt="Nameria World Map - Fullscreen" id="modalMapImage">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
