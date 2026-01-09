@@ -1,12 +1,5 @@
 [
   {
-    "id": "s#1",
-    "name": "Aarakocra",
-    "source": "Mordenkainen Presents: Monsters of the Multiverse",
-    "description": "A winged people who originated on the Elemental Plane of Air, aarakocra soar through the sky wherever they wander.",
-    "imagePath": "/images/species/aarakocra.png"
-  },
-  {
     "id": "s#2",
     "name": "Centaur",
     "source": "Mordenkainen Presents: Monsters of the Multiverse",
